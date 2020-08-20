@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app = "githubViewer">  <!-- module-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Document</title>
+    <script src="script.js"></script>
+    <script src="github.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body ng-controller = "MainCtrl">
+    <h1>{{message}}</h1>
+    <div>
+        {{error}}
+    </div>
+    <!--           click search botton nothing happen if dont hane anything in
+                            the search bar !!
+
+    <form name="searchUser">
+        <input type="search" user-name = "Username to find" ng-model = "username"/>
+        <input type="submit" value = "Search" ng-click ="search(username)">
+    </form>
+    -->
+    <!--                    Different way of doing it      
+                                have to fill out the search bar        
+    -->
+    {{countdown}}
+    <form name="searchUser" ng-submit ="search(username)">
+        <input type="search" required user-name = "Username to find" ng-model = "username"/>
+        <input type="submit" value = "Search">
+    </form>
+
+   <div ng-include="'userdetails.html'" ng-show="user"></div>
+
+</body>
+</html>
